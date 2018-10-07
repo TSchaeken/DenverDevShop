@@ -1,0 +1,79 @@
+@import '../../styles/variables';
+
+ .root {
+   width: 95vw;
+   max-width: 1600px;
+   max-height: 900px;
+   margin: auto;
+   display: grid;
+   @include for-tablet-landscape-up {
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: repeat(2, 1fr);
+   }
+   @include for-tablet-portrait-down {
+     grid-template-rows: repeat(4, 1fr);
+   }
+ }
+
+.testImageWrapper1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.testImageWrapper2 {
+  grid-column: 2;
+  grid-row: 1;
+  @include for-tablet-portrait-down {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+.testImageWrapper3 {
+  grid-column: 1;
+  grid-row: 2;
+  @include for-tablet-portrait-down {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+
+.testImageWrapper4 {
+  grid-column: 2;
+  grid-row: 2;
+  @include for-tablet-portrait-down {
+    grid-column: 1;
+    grid-row: 4;
+  }
+}
+
+div[class*="testImageWrapper"] {
+  position: relative;
+  overflow: hidden;
+  // @include for-tablet-portrait-down {
+  // }
+}
+
+.anchorImage {
+  width: 100%;
+  max-width: 100%;
+}
+
+.testImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  max-width: 100%;
+}
+
+.testImage, .anchorImage {
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+}

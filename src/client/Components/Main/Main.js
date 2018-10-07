@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 // import UnionStation from '../images/unionStation.jpg';
 // import Form from './Form';
 import TagLine from '../TagLine';
+import CaseStudies from '../CaseStudies';
 
 //Photo by Owen CL on Unsplash
 
@@ -30,7 +31,10 @@ class HomePage extends Component {
       <div className={styles.root}>
         {this.head()}
         <TagLine />
-        <button type='submit' onClick={() => console.log('hi!')}>Hey there</button>
+        <CaseStudies />
+        <div style={{ height: '500px' }}>
+          Here's some content that will come after the case studies
+        </div>
       </div>
     );
   }
