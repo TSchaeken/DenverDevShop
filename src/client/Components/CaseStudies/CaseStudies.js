@@ -12,15 +12,17 @@ const CaseStudies = () => (
     <div className={styles.testImageWrapper1}>
       <img src={denver1} alt='denver1' className={styles.anchorImage} />
     </div>
+
     <div className={styles.testImageWrapper2}>
-      <div style={{ backgroundImage: `url(${denver2})` }} alt='denver2' className={styles.testImage} />
+      <img src={denver2} alt='denver2' className={styles.anchorImage} />
     </div>
 
     <div className={styles.testImageWrapper3}>
-      <div style={{ backgroundImage: `url(${denver3})` }} alt='denver3' className={styles.testImage} />
+      <img src={denver3} alt='denver3' className={styles.anchorImage} />
     </div>
+
     <div className={styles.testImageWrapper4}>
-      <div style={{ backgroundImage: `url(${denver4})` }} alt='denver4' className={styles.testImage} />
+      <img src={denver4} alt='denver4' className={styles.anchorImage} />
     </div>
 
   </div>
