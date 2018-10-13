@@ -10,18 +10,30 @@ const CaseStudies = () => (
   <div className={styles.root}>
 
     <div className={styles.testImageWrapper1}>
+      <div className={styles.textOverlay}>
+        Placeholder
+      </div>
       <img src={denver1} alt='denver1' className={styles.anchorImage} />
     </div>
 
     <div className={styles.testImageWrapper2}>
+      <div className={styles.textOverlay}>
+        Placeholder
+      </div>
       <img src={denver2} alt='denver2' className={styles.anchorImage} />
     </div>
 
     <div className={styles.testImageWrapper3}>
+      <div className={styles.textOverlay}>
+        Placeholder
+      </div>
       <img src={denver3} alt='denver3' className={styles.anchorImage} />
     </div>
 
     <div className={styles.testImageWrapper4}>
+      <div className={styles.textOverlay}>
+        Placeholder
+      </div>
       <img src={denver4} alt='denver4' className={styles.anchorImage} />
     </div>
 
