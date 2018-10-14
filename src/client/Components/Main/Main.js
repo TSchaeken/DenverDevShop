@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet';
 // import Form from './Form';
 import TagLine from '../TagLine';
 import CaseStudies from '../CaseStudies';
+import FollowUp from '../FollowUp';
 
 //Photo by Owen CL on Unsplash
 
@@ -32,9 +33,7 @@ class HomePage extends Component {
         {this.head()}
         <TagLine />
         <CaseStudies />
-        <div style={{ height: '500px' }}>
-          Here's some content that will come after the case studies
-        </div>
+        <FollowUp />
       </div>
     );
   }
