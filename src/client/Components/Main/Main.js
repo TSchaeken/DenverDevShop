@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 import TagLine from '../TagLine';
 import CaseStudies from '../CaseStudies';
 import FollowUp from '../FollowUp';
+import Footer from '../Footer';
 
 //Photo by Owen CL on Unsplash
 
@@ -34,6 +35,7 @@ class HomePage extends Component {
         <TagLine />
         <CaseStudies />
         <FollowUp />
+        <Footer />
       </div>
     );
   }
