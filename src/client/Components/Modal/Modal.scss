@@ -7,17 +7,137 @@
   right: 0;
   bottom: 0;
   pointer-events: none;
+  z-index: 1000;
+  transition: z-index 500ms ease-out 500ms;
   &.open {
-    z-index: 1000;
     .backdrop {
       pointer-events: auto;
-      display: block;
+      // display: block;
+      background-color: rgba(255,255,255,0.75);
+      transition: background 750ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .dialogBox {
+      transform: translateY(0);
+      transition: transform 750ms cubic-bezier(0.23, 1, 0.320, 1);
     }
   }
 }
 
 .backdrop {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0);
+  transition: background 750ms cubic-bezier(0.23, 1, 0.32, 1) 200ms;
   height: 100%;
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  // align-items: center;
+  // justify-content: flex-start;
+}
+
+.dialogBox {
+  position: relative;
+  display: block;
+  background-color: white;
+  width: 100vw;
+  height: 65vh;
+  pointer-events: all;
+  transform: translateY(-100vh);
+  transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 24px;
+  border-radius: 4px;
+  // z-index: 1100;
+  &::before {
+    background-image: url('../../assets/8438474948_b8d590afa1_h.jpg');
+    background-position: bottom;
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.85;
+    z-index: -1;
+    background-color: #123;
+  }
+  
+  .modalContent {
+    color: white;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    max-width: 850px;
+    margin: auto;
+    padding-top: 32px;
+    h2 {
+      font-size: 2rem;
+      padding: 12px 0;
+    }
+    h3 {
+      font-size: 1.5rem;
+      padding: 8px 0;
+    }
+    .modalBody {
+      display: flex;
+      .modalForm {
+        flex-grow: 8;
+        display: flex;
+        flex-direction: column;
+        input, textarea {
+          border-radius: 4px;
+          border: none;
+          min-height: 48px;
+          padding-left: 8px;
+          margin: 8px 0;
+          ::placeholder {
+            color: $grey;
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+        textarea {
+          padding-top: 16px;
+          height: 72px;
+        }
+        .inlineInputWrapper {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          input {
+            width: 48%;
+          }
+        }
+      }
+      .modalContactInfo {
+        flex-grow: 3;
+        margin-left: 16px;
+      }
+    }
+    .submitButton {
+      background-color: green;
+      color: white;
+      font-size: 18px;
+      padding: 12px 0;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      outline: none;
+      &:hover {
+        background-color: darken(green, 5%);
+      }
+    }
+  }
 }

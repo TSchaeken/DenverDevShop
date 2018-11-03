@@ -14,12 +14,40 @@ class Modal extends Component {
     return (
       <div className={open ? [styles.root, styles.open].join(' ') : styles.root}>
         <div
-          onClick={toggleContactModal}
+          onClick={() => toggleContactModal(!open)}
           className={styles.backdrop}
-          onKeyDown={this.onKeyDown}
-          role='dialog'
+          role='presentation'
         >
-          {open ? 'open' : 'closed'}
+          <div
+            role='presentation'
+            onClick={e => e.stopPropagation()}
+            className={styles.dialogBox}
+          >
+            <div className={styles.modalContent}>
+              <div className={styles.modalHeader}>
+                <h2>Contact Us. We Promise Not To Steal Your Girl.</h2>
+                <h3>That is, as long as you tell us how we can help you.</h3>
+              </div>
+              <div className={styles.modalBody}>
+                <div className={styles.modalForm}>
+                  <div className={styles.inlineInputWrapper}>
+                    <input placeholder='Your Name' type='text' />
+                    <input placeholder='Your Email' type='text' />
+                  </div>
+                  <input placeholder='Your Project Focus' type='text' />
+                  <textarea placeholder='Your Message' />
+                  <button className={styles.submitButton} type='submit'>
+                    Submit
+                  </button>
+                </div>
+                <div className={styles.modalContactInfo}>
+                  <h5>Location</h5>
+                  <p>Denver, CO USA</p>
+                  <p>123 Your Mom's house</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
