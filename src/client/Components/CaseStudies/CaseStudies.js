@@ -11,28 +11,28 @@ const CaseStudies = () => (
 
     <div className={styles.testImageWrapper1}>
       <div className={styles.textOverlay}>
-        Placeholder
+        We do it all: Mobile Apps, Web Apps, APIs
       </div>
       <img src={denver1} alt='denver1' className={styles.anchorImage} />
     </div>
 
     <div className={styles.testImageWrapper2}>
       <div className={styles.textOverlay}>
-        Placeholder
+        Rapid Prototyping
       </div>
       <img src={denver2} alt='denver2' className={styles.anchorImage} />
     </div>
 
     <div className={styles.testImageWrapper3}>
       <div className={styles.textOverlay}>
-        Placeholder
+        UI/UX Design
       </div>
       <img src={denver3} alt='denver3' className={styles.anchorImage} />
     </div>
 
     <div className={styles.testImageWrapper4}>
       <div className={styles.textOverlay}>
-        Placeholder
+        Blockchain Decentralized Applications
       </div>
       <img src={denver4} alt='denver4' className={styles.anchorImage} />
     </div>
