@@ -5,7 +5,15 @@ import styles from './NavBar.scss';
 
 const NavBar = ({ scrolled }) => (
   <div className={scrolled ? [styles.root, styles.scrolled].join(' ') : styles.root}>
-    <div className={styles.logo}>Denver Devshop</div>
+    <div className={styles.logo}>
+      <div className={styles.logoText}>Denver Devshop</div>
+      <div className={styles.animatedLogo}>
+        {/* Denver Devshop */}
+        <div className={styles.square} />
+        <div className={styles.leftBracket} />
+        <div className={styles.rightBracket} />
+      </div>
+    </div>
     <div className={styles.buttonsWrapper}>
       <div>
         Our Work
@@ -26,6 +34,5 @@ const NavBar = ({ scrolled }) => (
 NavBar.propTypes = {
   scrolled: PropTypes.bool.isRequired,
 };
-
 
 export default NavBar;
