@@ -5,13 +5,16 @@ import styles from './TagLine.scss';
 const TagLine = () => (
   <div className={styles.root}>
     <div className={styles.headline}>
-      Devshop For Hire
+      Startup team for hire
     </div>
     <div className={styles.followUp}>
-      Also available for:
+      "A great experience working with highly motivated engineers."
     </div>
     <div className={styles.followUp}>
-      Happy hours, bowling, and birthday parties.
+      We specialize in design and robust application development.
+    </div>
+    <div className={styles.buttonsWrapper}>
+      <button type='button'>Meet the team!</button>
     </div>
   </div>
 );

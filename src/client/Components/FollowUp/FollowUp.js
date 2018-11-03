@@ -5,13 +5,12 @@ import styles from './FollowUp.scss';
 const FollowUp = () => (
   <div className={styles.root}>
     <div className={styles.headline}>
-      We're a Denver based team of dudebros who are coming to build good shit and steal yo girl.
+      We're a Denver based team of innovative, creative and passionate individuals who love to collaborate.
     </div>
     <div className={styles.followUpText}>
-      But for real though, we know you've got a great idea. Let's help you get it out there.
+      You've got a great idea. We want to help you build it.
     </div>
     <div className={styles.buttonsWrapper}>
-      <button type='button'>Meet the boys</button>
       <button type='button'>Holler at us</button>
     </div>
   </div>

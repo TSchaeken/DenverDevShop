@@ -5,10 +5,14 @@ import styles from './Footer.scss';
 const Footer = () => (
   <div className={styles.root}>
     <div className={styles.footerText}>
-      Tryna get something off the ground?
+      Ready to launch?
     </div>
     <div className={styles.footerLink}>
-      Hit us up already!
+      Let's Chat!
+    </div>
+    <div>
+      <div>&copy; Denver Devshop 2018 — Denver, CO</div>
+      <div>720.588.3355</div>
     </div>
   </div>
 );
