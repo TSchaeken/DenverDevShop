@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  &.open {
+    z-index: 1000;
+    .backdrop {
+      pointer-events: auto;
+      display: block;
+    }
+  }
+}
+
+.backdrop {
+  background-color: rgba(0,0,0,0.5);
+  height: 100%;
+  display: none;
+}

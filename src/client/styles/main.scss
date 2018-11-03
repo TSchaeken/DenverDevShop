@@ -16,3 +16,8 @@ $spacing-xl: 48px;
 body {
   background-color: $white;
 }
+
+modalOpen {
+  position: fixed;
+  overflow: hidden;
+}

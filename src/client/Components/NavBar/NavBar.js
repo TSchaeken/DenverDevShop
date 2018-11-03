@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import { HashLink as Link } from 'react-router-hash-link';
 import styles from './NavBar.scss';
 
-const NavBar = ({ scrolled }) => (
+const NavBar = ({ scrolled, toggleContactModal }) => (
   <div className={scrolled ? [styles.root, styles.scrolled].join(' ') : styles.root}>
     <div className={styles.logo}>
       <div className={styles.logoText}>Denver Devshop</div>
@@ -15,24 +15,25 @@ const NavBar = ({ scrolled }) => (
       </div>
     </div>
     <div className={styles.buttonsWrapper}>
-      <div>
+      <button onClick={() => console.log('clicked')} type='button' className={styles.navButton}>
         Our Work
-      </div>
-      <div>
+      </button>
+      <button onClick={() => console.log('clicked')} type='button' className={styles.navButton}>
         What We Do
-      </div>
-      <div>
+      </button>
+      <button onClick={() => console.log('clicked')} type='button' className={styles.navButton}>
         Who We Are
-      </div>
-      <div>
+      </button>
+      <button onClick={toggleContactModal} type='button' className={styles.navButton}>
         Contact Us
-      </div>
+      </button>
     </div>
   </div>
 );
 
 NavBar.propTypes = {
   scrolled: PropTypes.bool.isRequired,
+  toggleContactModal: PropTypes.func.isRequired,
 };
 
 export default NavBar;
