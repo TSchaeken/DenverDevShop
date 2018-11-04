@@ -18,10 +18,12 @@ body {
 }
 
 .modalOpen {
-  position: fixed;
+  // position: fixed;
+  height: 100%;
   overflow: hidden;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  -webkit-overflow-scrolling: auto;
+  // top: 0;
+  // right: 0;
+  // left: 0;
+  // bottom: 0;
 }

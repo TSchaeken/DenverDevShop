@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './TagLine.scss';
 
-const TagLine = () => (
+const TagLine = ({ toggleModal }) => (
   <div className={styles.root}>
     <div className={styles.headline}>
       Startup team for hire
@@ -14,7 +14,7 @@ const TagLine = () => (
       We specialize in design and robust application development.
     </div>
     <div className={styles.buttonsWrapper}>
-      <button type='button'>Meet the team!</button>
+      <button onClick={toggleModal} type='button'>Meet the team!</button>
     </div>
   </div>
 );

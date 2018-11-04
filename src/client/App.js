@@ -31,7 +31,11 @@ class App extends Component {
       <div className={contactModalOpen ? styles.modalOpen : null}>
         <Modal toggleContactModal={this.toggleContactModal} open={contactModalOpen} />
         <NavBar toggleContactModal={() => this.toggleContactModal(!contactModalOpen)} scrolled={scrollY >= 64} />
-        <Route exact path='/' component={Main} />
+        <Route
+          exact
+          path='/'
+          render={props => <Main toggleModal={() => this.toggleContactModal(!contactModalOpen)} />}
+        />
       </div>
     );
   }

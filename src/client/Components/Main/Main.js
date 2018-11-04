@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 // import { HashLink as Link } from 'react-router-hash-link';
 // import About from './Info';
@@ -29,13 +29,14 @@ class HomePage extends Component {
   );
 
   render() {
+    const { toggleModal } = this.props;
     return (
       <div className={styles.root}>
         {this.head()}
-        <TagLine />
+        <TagLine toggleModal={toggleModal} />
         <CaseStudies />
-        <FollowUp />
-        <Footer />
+        <FollowUp toggleModal={toggleModal} />
+        <Footer toggleModal={toggleModal} />
       </div>
     );
   }
@@ -43,6 +44,7 @@ class HomePage extends Component {
 
 HomePage.propTypes = {
   // classes: PropTypes.object.isRequired,
+  toggleModal: PropTypes.func.isRequired,
 };
 
 export default HomePage;

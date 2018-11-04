@@ -2,12 +2,13 @@ import React from 'react';
 
 import styles from './Footer.scss';
 
-const Footer = () => (
+/* eslint-disable */
+const Footer = ({ toggleModal }) => (
   <div className={styles.root}>
     <div className={styles.footerText}>
       Ready to launch?
     </div>
-    <div className={styles.footerLink}>
+    <div onClick={toggleModal} className={styles.footerLink}>
       Let's Chat!
     </div>
     <div>
