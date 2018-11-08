@@ -14,17 +14,11 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 // app.use(cors());
-// app.use(cors({
-//     'allowedHeaders': [
-//         'Content-Type',
-//         'Access-Control-Allow-Origin',
-//         'Access-Control-Allow-Methods',
-//         'Access-Control-Allow-Headers',
-//     ],
-//     'origin': 'https://www.denverdevshop.com',
-//     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//     'preflightContinue': false,
-// }));
+app.use(cors({
+    'origin': 'www.denverdevshop.com',
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'preflightContinue': false,
+}));
 
 app.use(express.static('public'));
 
