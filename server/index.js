@@ -49,14 +49,14 @@ app.get('*', (req, res) => {
   }
 });
 
-app.post('/sendEmail', cors(corsOptions), (req, res) => {
+app.post('/sendEmail', (req, res) => {
     if (req.method === "OPTIONS") {
         res.header('Access-Control-Allow-Origin', req.headers.origin);
     } else {
         res.header('Access-Control-Allow-Origin', '*');
     }
     app.options('*', cors());
-    
+
     console.log({req})
     const body = _.pick(req.body, [
         'name',
