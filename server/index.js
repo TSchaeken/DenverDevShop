@@ -14,11 +14,11 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 // app.use(cors());
-app.use(cors({
-    'origin': 'www.denverdevshop.com',
-    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    'preflightContinue': false,
-}));
+
+const corsOptions = {
+    origin: 'https://www.denverdevshop.com',
+    optionsSuccessStatus: 200
+}
 
 app.use(express.static('public'));
 
@@ -49,7 +49,8 @@ app.get('*', (req, res) => {
   }
 });
 
-app.post('/sendEmail', (req, res) => {
+app.post('/sendEmail', cors(corsOptions) (req, res) => {
+    console.log({req})
     const body = _.pick(req.body, [
         'name',
         'address',
