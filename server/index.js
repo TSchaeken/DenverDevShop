@@ -55,7 +55,7 @@ app.get('*', (req, res) => {
   }
 });
 
-app.post('/sendEmail', cors(), (req, res) => {
+app.post('/sendEmail', (req, res) => {
     const body = _.pick(req.body, [
         'name',
         'address',
