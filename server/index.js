@@ -4,17 +4,30 @@ import renderer from './helpers/renderer';
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const smtp = require('nodemailer-smtp-transport');
+const bodyParser = require('body-parser');
 
 const _ = require('lodash');
 const log = new Log('info');
 const PORT = process.env.PORT || 8000;
 const app = express();
 
-app.use(cors());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+// app.use(cors());
+app.use(cors({
+    'allowedHeaders': [
+        'Content-Type',
+        'Access-Control-Allow-Origin',
+        'Access-Control-Allow-Methods',
+        'Access-Control-Allow-Headers',
+    ]
+}));
+
 app.use(express.static('public'));
 
+let smtpTransport
 try {
-    const smtpTransport = nodemailer.createTransport({
+    smtpTransport = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
         secure: true,
@@ -40,34 +53,30 @@ app.get('*', (req, res) => {
 });
 
 app.post('/sendEmail', (req, res) => {
-    // const body = _.pick(req.body, [
-    //     'address',
-    //     'body',
-    //     'name'
-    // ]);
+    const body = _.pick(req.body, [
+        'name',
+        'address',
+        'message',
+    ]);
     try {
-
-
-        var mailOptions = {
+        const mailOptions = {
             from: 'noah@denverdevshop.com',
-            to: 'rjhilgefort@gmail.com',
-            subject: 'Hello',
+            to: body.address,
+            subject: `Inquiry from: ${body.name}`,
             generateTextFromHTML: true,
-            html: '<b>Hello world</b>'
+            html: `<b>${body.message}</b>`
         };
 
         smtpTransport.sendMail(mailOptions, function(error, response) {
             if (error) {
-                console.log(error);
-            } else {
-                console.log(response);
+                log.error(`Failed to send email with error: ${error.message}`);
+                res.sendStatus(400);
             }
         });
+        res.sendStatus(200);
 
-        // log.info(`Successfully sent email.`);
-        // res.sendStatus(200);
     } catch (error) {
-        log.error(`Failed to send email: ${body}, ${error.message}`);
+        log.error(`Failed to send email with error: ${error.message}`);
         res.sendStatus(400);
     }
 });
