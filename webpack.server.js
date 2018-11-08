@@ -1,7 +1,13 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const webpackNodeExternals = require('webpack-node-externals');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const baseConfig = require('./webpack.base.js');
+
+const extractSass = new ExtractTextPlugin({
+  filename: "../public/styles.css",
+  allChunks: true,
+});
 
 const config = {
   // Inform webpack that we are building a bundle
@@ -24,26 +30,28 @@ const config = {
     rules: [
       {
         test: /\.scss$/,
-        use: [
-          {
-            loader: 'isomorphic-style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              sourceMap: true,
+        use: extractSass.extract({
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                importLoaders: 1,
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+              },
             },
-          },
-          {
-            loader: 'sass-loader',
-          },
-        ],
+            {
+              loader: 'sass-loader',
+            },
+          ],
+          fallback: "style-loader",
+        }),
       },
     ],
   },
+  plugins: [
+    extractSass,
+  ],
 };
 
 module.exports = merge(baseConfig, config);

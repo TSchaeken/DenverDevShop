@@ -1,5 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge');
+const webpack = require('webpack');
 const baseConfig = require('./webpack.base.js');
 
 const config = {
@@ -36,6 +37,17 @@ const config = {
       },
     ],
   },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        screw_ie8: true,
+        drop_console: true,
+        drop_debugger: true,
+      },
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+  ],
 };
 
 module.exports = merge(baseConfig, config);

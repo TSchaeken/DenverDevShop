@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+
+.root {
+  height: 530px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.25rem;
+  margin: $spacing-lg;
+}
+
+.followUp {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $grey;
+  margin: $spacing-md;
+}
+
+.buttonsWrapper {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: $spacing-md;
+  button {
+    background-color: slateGrey;
+    color: white;
+    margin: $spacing-lg;
+    padding: $spacing-md;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    outline: none !important;
+  }
+  @include for-tablet-portrait-down {
+    width: 100%;
+  }
+  @include for-phone-only {
+    width: 100%;
+    flex-direction: column;
+  }
+}
