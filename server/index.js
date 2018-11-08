@@ -49,7 +49,7 @@ app.get('*', (req, res) => {
   }
 });
 
-app.post('/sendEmail', cors(corsOptions) (req, res) => {
+app.post('/sendEmail', cors(corsOptions), (req, res) => {
     console.log({req})
     const body = _.pick(req.body, [
         'name',
