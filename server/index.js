@@ -20,7 +20,10 @@ app.use(cors({
         'Access-Control-Allow-Origin',
         'Access-Control-Allow-Methods',
         'Access-Control-Allow-Headers',
-    ]
+    ],
+    'origin': 'https://www.denverdevshop.com',
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'preflightContinue': false,
 }));
 
 app.use(express.static('public'));
