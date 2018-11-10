@@ -17,16 +17,16 @@ https://www.denverdevshop.com
 1. `git remote -v`
 
 ```
-origin	git@github.com:noahschutte/denverdevshopsite.git (fetch)
-origin	git@github.com:noahschutte/denverdevshopsite.git (push)
+origin	git@github.com:noahschutte/denverdevshop.git (fetch)
+origin	git@github.com:noahschutte/denverdevshop.git (push)
 ```
-1. `git remote add heroku https://git.heroku.com/denverdevshopsite.git`
+1. `git remote add heroku https://git.heroku.com/denverdevshop.git`
 1. `git remote -v`
 ```
-origin	git@github.com:noahschutte/denverdevshopsite.git (fetch)
-origin	git@github.com:noahschutte/denverdevshopsite.git (push)
-heroku	https://git.heroku.com/denverdevshopsite.git (fetch)
-heroku	https://git.heroku.com/denverdevshopsite.git (push)
+origin	git@github.com:noahschutte/denverdevshop.git (fetch)
+origin	git@github.com:noahschutte/denverdevshop.git (push)
+heroku	https://git.heroku.com/denverdevshop.git (fetch)
+heroku	https://git.heroku.com/denverdevshop.git (push)
 ```
 
 ### Open Site in Production

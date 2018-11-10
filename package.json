@@ -1,9 +1,9 @@
 {
-  "name": "DenverDevShop",
+  "name": "denverdevshop",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/noahschutte/denverDevShopSite.git"
+    "url": "git://github.com/noahschutte/denverdevshop.git"
   },
   "description": "Server side rendering company website",
   "main": "src/index.js",
@@ -17,7 +17,7 @@
     "lint-fix": "eslint . --fix",
     "start": "nodemon --watch build --exec node build/bundle.js",
     "deploy": "git push heroku master:master",
-    "open": "heroku open -a denverdevshopsite",
+    "open": "heroku open -a denverdevshop",
     "clean": "rm -rf build/ && rm -rf public/",
     "prettier": "prettier-standard 'src/client/**/*.js'"
   },
