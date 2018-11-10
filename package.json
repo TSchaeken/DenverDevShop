@@ -7,6 +7,10 @@
   },
   "description": "Server side rendering company website",
   "main": "src/index.js",
+  "engines": {
+    "node": "8.11.3",
+    "npm": "5.6.0"
+  },
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
     "dev:server": "nodemon --watch build --exec node build/bundle.js",
