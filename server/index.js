@@ -17,7 +17,6 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 let smtpTransport
-console.log(process.env)
 try {
     smtpTransport = nodemailer.createTransport({
         host: 'smtp.gmail.com',
