@@ -1,7 +1,7 @@
+require('dotenv').config();
 import express from 'express';
 import Log from 'log';
 import renderer from './helpers/renderer';
-const cors = require('cors');
 const nodemailer = require('nodemailer');
 const smtp = require('nodemailer-smtp-transport');
 const bodyParser = require('body-parser');
@@ -13,16 +13,11 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-// app.use(cors());
-
-const corsOptions = {
-    origin: 'https://www.denverdevshop.com',
-    optionsSuccessStatus: 200
-}
 
 app.use(express.static('public'));
 
 let smtpTransport
+console.log(process.env)
 try {
     smtpTransport = nodemailer.createTransport({
         host: 'smtp.gmail.com',
@@ -30,11 +25,11 @@ try {
         secure: true,
         auth: {
             type: 'OAuth2',
-            user: 'noah@denverdevshop.com',
-            clientId: '1060387934321-ko82pl7g8hftu09k6hstq4j4h5dn2i1u.apps.googleusercontent.com',
-            clientSecret: 'NX9tTX4GceqDcW5IFnH2XADP',
-            refreshToken: '1/H1DC63NBHRe1kMpNrqfcib-lYGWHRDJagUK9UwvtHuY',
-            accessToken: 'ya29.GltJBmw4W9SHgjvFHP3sDSBwBwFrSljeFMbdwwZTmLrLDYQ026RwlF5mgiX0K2nTxsud8F_Z44BlCjyUsUxwSc4WHeQXTW2j9YM2CAijSci3dz1nCFtes-4jIXA8'
+            user: process.env.SMTP_USER,
+            clientId: process.env.SMTP_CLIENT_ID,
+            clientSecret: process.env.SMTP_CLIENT_SECRET,
+            refreshToken: process.env.SMTP_REFRESH_TOKEN,
+            accessToken: process.env.SMTP_ACCESS_TOKEN
         }
     });
 } catch (e) {
@@ -50,14 +45,6 @@ app.get('*', (req, res) => {
 });
 
 app.post('/sendEmail', (req, res) => {
-    if (req.method === "OPTIONS") {
-        res.header('Access-Control-Allow-Origin', req.headers.origin);
-    } else {
-        res.header('Access-Control-Allow-Origin', '*');
-    }
-    app.options('*', cors());
-
-    console.log({req})
     const body = _.pick(req.body, [
         'name',
         'address',
@@ -65,11 +52,10 @@ app.post('/sendEmail', (req, res) => {
     ]);
     try {
         const mailOptions = {
-            from: 'noah@denverdevshop.com',
-            to: body.address,
+            to: 'noah@denverdevshop.com',
             subject: `Inquiry from: ${body.name}`,
             generateTextFromHTML: true,
-            html: `<b>${body.message}</b>`
+            html: `<b>${body.name} ${body.address} ${body.message}</b>`
         };
 
         smtpTransport.sendMail(mailOptions, function(error, response) {
