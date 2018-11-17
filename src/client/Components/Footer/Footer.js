@@ -11,9 +11,13 @@ const Footer = ({ toggleModal }) => (
     <div onClick={toggleModal} className={styles.footerLink}>
       Let's Chat!
     </div>
-    <div>
-      <div>&copy; Denver Devshop 2018 — Denver, CO</div>
-      <div>720.588.3355</div>
+    <div className={styles.copyrightWrapper}>
+        <div className={styles.copyright}>
+            <p>&copy; Denver Devshop 2018 — Denver, CO</p>
+        </div>
+        <div className={styles.phoneNumber}>
+            <p>720.588.3355</p>
+        </div>
     </div>
   </div>
 );

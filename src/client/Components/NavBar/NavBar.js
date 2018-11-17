@@ -15,15 +15,6 @@ const NavBar = ({ scrolled, toggleContactModal }) => (
       </div>
     </div>
     <div className={styles.buttonsWrapper}>
-      <button onClick={() => console.log('clicked')} type='button' className={styles.navButton}>
-        Our Work
-      </button>
-      <button onClick={() => console.log('clicked')} type='button' className={styles.navButton}>
-        What We Do
-      </button>
-      <button onClick={() => console.log('clicked')} type='button' className={styles.navButton}>
-        Who We Are
-      </button>
       <button onClick={toggleContactModal} type='button' className={styles.navButton}>
         Contact Us
       </button>
