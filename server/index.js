@@ -47,6 +47,7 @@ app.post('/sendEmail', (req, res) => {
     const body = _.pick(req.body, [
         'name',
         'address',
+        'focus',
         'message',
     ]);
     try {
@@ -54,7 +55,7 @@ app.post('/sendEmail', (req, res) => {
             to: 'noah@denverdevshop.com',
             subject: `Inquiry from: ${body.name}`,
             generateTextFromHTML: true,
-            html: `<b>${body.name} ${body.address} ${body.message}</b>`
+            html: `<b>${body.name} - ${body.address} - ${body.focus} - ${body.message}</b>`
         };
 
         smtpTransport.sendMail(mailOptions, function(error, response) {
