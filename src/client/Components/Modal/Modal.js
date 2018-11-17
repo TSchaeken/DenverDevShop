@@ -51,6 +51,10 @@ class Modal extends Component {
             onClick={e => e.stopPropagation()}
             className={styles.dialogBox}
           >
+            <div className={styles.closeModalIcon}>
+              {/* eslint-disable-next-line */}
+              <span role='button' onClick={() => toggleContactModal(!open)}>X</span>
+            </div>
             <div className={styles.modalContent}>
               <div className={styles.modalHeader}>
                 <h2>Your email will be shared with a golden retriever.</h2>
