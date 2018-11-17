@@ -81,7 +81,7 @@ class Modal extends Component {
                 </div>
                 <div className={styles.modalContactInfo}>
                   <br />
-                  <img src={coCompany} alt='coCompany'/>
+                  <img src={coCompany} alt='coCompany' />
                   <br />
                   <br />
                   <h5>Location</h5>
