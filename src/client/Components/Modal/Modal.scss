@@ -72,7 +72,7 @@
     z-index: -1;
     background-color: #123;
   }
-  
+
   .modalContent {
     color: white;
     // display: flex;
@@ -118,6 +118,9 @@
           input {
             width: 48%;
           }
+        }
+        .messageArea {
+          height: 100px;
         }
       }
       .modalContactInfo {

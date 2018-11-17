@@ -23,7 +23,6 @@
 .footerText, .footerLink {
   color: #ccc;
   font-size: 1.25rem;
-  font-size: 1.25rem;
   z-index: 200;
 }
 
@@ -31,4 +30,23 @@
   color: white;
   text-decoration: underline;
   cursor: pointer;
+  margin: 5px;
+}
+
+.copyrightWrapper {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  .copyright {
+    color: #ccc;
+    float: left;
+    margin-left: 30px;
+  }
+  .phoneNumber {
+    color: #ccc;
+    float: right;
+    margin-right: 30px;
+  }
 }
