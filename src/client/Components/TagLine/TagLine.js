@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './TagLine.scss';
 
@@ -19,5 +20,9 @@ const TagLine = ({ toggleModal }) => (
     </div>
   </div>
 );
+
+TagLine.propTypes = {
+  toggleModal: PropTypes.func.isRequired,
+};
 
 export default TagLine;
