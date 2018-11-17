@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './FollowUp.scss';
 
@@ -15,5 +16,9 @@ const FollowUp = ({ toggleModal }) => (
     </div>
   </div>
 );
+
+FollowUp.propTypes = {
+  toggleModal: PropTypes.func.isRequired,
+};
 
 export default FollowUp;

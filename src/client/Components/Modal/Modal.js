@@ -5,9 +5,35 @@ import styles from './Modal.scss';
 
 class Modal extends Component {
   state = {
-    email: '',
-    body: '',
+    address: '',
+    focus: '',
+    name: '',
+    message: '',
   };
+
+  handleChange = (name, value) => {
+    this.setState(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
+  }
+
+  sendEmail = () => {
+    const response = fetch('./sendEmail', {
+      headers: new Headers({
+        'Content-Type': 'application/json',
+      }),
+      method: 'POST',
+      body: JSON.stringify(this.state),
+    });
+    Promise.resolve(response).then(result => {
+      if (result.ok) {
+        console.log('email successfully sent!');
+      } else {
+        console.log('email failed to send');
+      }
+    });
+  }
 
   render() {
     const { open, toggleContactModal } = this.props;
@@ -31,12 +57,23 @@ class Modal extends Component {
               <div className={styles.modalBody}>
                 <div className={styles.modalForm}>
                   <div className={styles.inlineInputWrapper}>
-                    <input placeholder='Your Name' type='text' />
-                    <input placeholder='Your Email' type='text' />
+                    <input
+                      placeholder='Your Name'
+                      onChange={e => this.handleChange('name', e.target.value)}
+                      type='text' />
+                    <input
+                      placeholder='Your Email'
+                      onChange={e => this.handleChange('address', e.target.value)}
+                      type='text' />
                   </div>
-                  <input placeholder='Your Project Focus' type='text' />
-                  <textarea placeholder='Your Message' />
-                  <button className={styles.submitButton} type='submit'>
+                  <input
+                    placeholder='Your Project Focus'
+                    onChange={e => this.handleChange('focus', e.target.value)}
+                    type='text' />
+                  <textarea
+                    onChange={e => this.handleChange('message', e.target.value)}
+                    placeholder='Your Message' />
+                  <button onClick={this.sendEmail} className={styles.submitButton} type='submit'>
                     Submit
                   </button>
                 </div>
