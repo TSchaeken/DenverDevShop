@@ -4,65 +4,49 @@
   width: 100%;
   background-color: rgba(0,0,0,0);
   height: 64px;
+  max-height: 64px;
   position: fixed;
   z-index: 500;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
   top: 0;
-  > div {
-    padding: 0 $spacing-lg;
-  }
-}
-
-.navButton {
-  background-color: inherit;
-  font-family: $header;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  color: $black;
-  transition: color 750ms ease-out;
-  outline: none;
-  &:hover {
-    color: black;
-    transition: color 750ms ease-out;
-  }
+  display: grid;
+  grid-template-columns: 48px 1fr 1fr 48px;
 }
 
 .scrolled {
   background-color: $white;
   box-shadow: 0 1px 5px rgba(0,0,0,0.5);
   transition: background-color 1000ms ease,
-              box-shadow 1000ms ease;
+  box-shadow 1000ms ease;
   -webkit-transition: background-color 1000ms ease,
-                      box-shadow 1000ms ease;
+  box-shadow 1000ms ease;
   -ms-transition: background-color 1000ms ease,
-                  box-shadow 1000ms ease;
+  box-shadow 1000ms ease;
 }
 
 .logo {
   font-size: 1.375rem;
   font-weight: bold;
-  text-align: center;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  grid-column: 2 / 3;
+  position: relative;
   .logoText {
     opacity: 0;
-    position: relative;
-    top: 2px;
+    position: absolute;
+    // display: flex;
+    // height: 64px;
+    // align-items: center;
+    left: 36px;
+    top: 18px;
     transition: opacity 0.25s linear;
   }
   .animatedLogo {
     position: relative;
-    right: 54%;
+    display: flex;
+    justify-content: flex-start;
     .leftBracket, .rightBracket, .square {
       // background-color: rgba(220, 220, 220, 0.4);
       position: absolute;
+      left: 6px;
+      top: 17px;
       height: 25px;
       width: 25px;
     }
@@ -74,7 +58,7 @@
       transform: rotate(45deg) translateX(0);
       opacity: 0;
       transition: transform 0.75s cubic-bezier(0.23, 1, 0.22, 1) 0.25s,
-                  opacity 0s step-end 1s;
+      opacity 0s step-end 1s;
     }
     .rightBracket {
       border-right: 4px solid black;
@@ -98,12 +82,12 @@
       opacity: 1;
     }
     .leftBracket {
-      transform: translateX(-290%) rotate(45deg);
+      transform: rotate(45deg);
       transition: transform 0.75s cubic-bezier(0.23, 1, 0.22, 1) 0.7s,
       opacity 0s step-end 0.75s;
     }
     .rightBracket {
-      transform: translateX(290%) rotate(-45deg);
+      transform: translateX(600%) rotate(-45deg);
       transition: transform 0.75s cubic-bezier(0.23, 1, 0.22, 1) 0.7s,
       opacity 0s step-end 0.75s;
     }
@@ -121,10 +105,22 @@
 
 .buttonsWrapper {
   display: flex;
-  flex-direction: row;
-  flex-grow: 2;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
-  font-size: 0.9375rem;
-  color: $dark-grey;
+  max-height: 64px;
+  grid-column: 3 / 4;
+  .navButton {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: $header;
+    font-weight: 600;
+    color: $black;
+    transition: color 750ms ease-out; 
+    outline: none;
+  }
+  @include for-phone-only {
+    display: none;
+  }
 }
