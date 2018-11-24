@@ -3,4 +3,10 @@
 .root {
   position: relative;
   top: 64px;
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  grid-template-rows: repeat(1fr, 2);
+  .contentWrapper {
+    grid-column-start: 2;
+  }
 }
