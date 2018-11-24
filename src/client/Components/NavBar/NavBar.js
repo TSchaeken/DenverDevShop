@@ -8,7 +8,6 @@ const NavBar = ({ scrolled, toggleContactModal }) => (
     <div className={styles.logo}>
       <div className={styles.logoText}>Denver Devshop</div>
       <div className={styles.animatedLogo}>
-        {/* Denver Devshop */}
         <div className={styles.square} />
         <div className={styles.leftBracket} />
         <div className={styles.rightBracket} />

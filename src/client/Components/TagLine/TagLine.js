@@ -13,7 +13,7 @@ const TagLine = ({ toggleModal }) => (
     </div>
     <div className={styles.followUp}>
       <p>"A great experience working with highly motivated engineers."</p>
-      <p className={styles.attribution}>- Rob (Senior Developer)</p>
+      <p className={styles.attribution}>- Rob</p>
     </div>
     <div className={styles.buttonsWrapper}>
       <button onClick={toggleModal} type='button'>Meet the team!</button>
