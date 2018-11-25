@@ -40,7 +40,7 @@ const Branding = () => (
   </div>
 );
 
-class Footer extends Component() {
+class Footer extends Component {
   constructor(props) {
     super(props)
     this.ref = React.createRef()

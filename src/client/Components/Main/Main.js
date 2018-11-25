@@ -25,6 +25,7 @@ class HomePage extends Component {
   );
 
   render() {
+    const { setRef } = this.props
     return (
       <div className={styles.root}>
         {this.head()}
@@ -33,7 +34,7 @@ class HomePage extends Component {
           <CaseStudies />
           <FollowUp />
         </div>
-        <Footer />
+        <Footer setRef={setRef} />
       </div>
     );
   }

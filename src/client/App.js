@@ -40,9 +40,8 @@ class App extends Component {
         <Route
           exact
           path='/'
-          component={Main}
-          render={() => (
-              <Main setRef={this.setRef} />
+          render={(props) => (
+              <Main setRef={this.setRef} {...props} />
           )}
         />
       </div>
