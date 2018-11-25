@@ -9,6 +9,7 @@
   pointer-events: none;
   z-index: 1000;
   transition: z-index 500ms ease-out 500ms;
+  max-width: 100vw;
   &.open {
     .backdrop {
       pointer-events: auto;
