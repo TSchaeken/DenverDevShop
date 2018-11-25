@@ -12,8 +12,7 @@ const TagLine = ({ scrollToRef }) => (
       We specialize in design and robust application development.
     </div>
     <div className={styles.followUp}>
-      <p>"A great experience working with highly motivated engineers."</p>
-      <p className={styles.attribution}>- Rob</p>
+      <p>"A great experience working with highly motivated engineers." - Rob</p>
     </div>
     <div className={styles.buttonsWrapper}>
       <button onClick={scrollToRef} type='button'>Meet the team!</button>
