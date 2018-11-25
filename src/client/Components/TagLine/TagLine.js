@@ -13,9 +13,10 @@ const TagLine = ({ scrollToRef, scrollY }) => {
         Startup team for hire
       </div>
       <div style={style} className={styles.followUp}>
-        We specialize in design and robust application development.
+        Lowest cost guaranteed.
       </div>
-      <div style={style} className={styles.followUp}>
+      <br/>
+      <div style={style} className={styles.quote}>
         <p>"A great experience working with highly motivated engineers." - Rob</p>
       </div>
       <div style={style} className={styles.buttonsWrapper}>
