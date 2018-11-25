@@ -12,19 +12,21 @@
 }
 
 .headline {
-  font-size: 2rem;
-  font-weight: bold;
+  font-family: $header;
+  font-size: 1.5rem;
+  font-weight: 700;
   line-height: 2rem;
   margin: $spacing-lg;
 }
 
 .followUpText {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-family: $body;
+  font-size: 1.3rem;
+  font-weight: normal;
   color: $dark-grey;
   margin: $spacing-md;
   @include for-tablet-portrait-down {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -35,12 +37,14 @@
   justify-content: space-around;
   margin-top: $spacing-md;
   button {
-    background-color: slateGrey;
-    color: white;
+    font-family: Montserrat;
+    font-weight: 700;
+    background-color: $white;
+    color: $orange;
     margin: $spacing-lg;
     padding: $spacing-md;
     cursor: pointer;
-    border: none;
+    border: 2px solid $orange;
     border-radius: 4px;
     outline: none !important;
   }

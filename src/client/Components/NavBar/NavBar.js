@@ -15,7 +15,7 @@ const NavBar = ({ scrolled, toggleContactModal }) => (
     </div>
     <div className={styles.buttonsWrapper}>
       <button onClick={toggleContactModal} type='button' className={styles.navButton}>
-        Contact Us
+        CONTACT US
       </button>
     </div>
   </div>
