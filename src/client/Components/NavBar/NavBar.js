@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import { HashLink as Link } from 'react-router-hash-link';
 import styles from './NavBar.scss';
 
-const NavBar = ({ scrolled }) => (
+const NavBar = ({ scrolled, scrollToRef }) => (
   <div className={scrolled ? [styles.root, styles.scrolled].join(' ') : styles.root}>
     <div className={styles.logo}>
       <div className={styles.logoText}>Denver Devshop</div>
@@ -14,7 +14,7 @@ const NavBar = ({ scrolled }) => (
       </div>
     </div>
     <div className={styles.buttonsWrapper}>
-      <button type='button' className={styles.navButton}>
+      <button type='button' className={styles.navButton} onClick={scrollToRef}>
         CONTACT US
       </button>
     </div>
