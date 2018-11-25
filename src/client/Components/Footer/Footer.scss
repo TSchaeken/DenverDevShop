@@ -2,6 +2,7 @@
 
 .root {
   min-height: 400px;
+  max-width: 100vw;
   background-image: url('../../assets/8438474948_b8d590afa1_h.jpg');
   background-position: bottom;
   position: relative;
@@ -34,6 +35,8 @@
   @include for-phone-only {
     grid-template-columns: 12px 1fr 12px;
     grid-template-rows: 48px 1fr 1fr 0.5fr;
+    background-position: initial;
+    background-size: cover;
     .contactFormWrapper {
       grid-column: 2;
       grid-row: 3;
