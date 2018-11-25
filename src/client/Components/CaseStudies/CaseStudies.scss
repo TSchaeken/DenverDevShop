@@ -1,19 +1,21 @@
 @import '../../styles/variables';
 
  .root {
-   width: 90vw;
-   max-width: 1600px;
-   max-height: 900px;
-   margin: auto;
-   display: grid;
-   @include for-tablet-portrait-up {
-     grid-template-columns: repeat(2, 1fr);
-     grid-template-rows: repeat(2, 1fr);
-   }
-   @include for-phone-only {
-     grid-template-rows: repeat(4, 1fr);
-     width: 100%;
-   }
+    width: 90vw;
+    max-width: 1600px;
+    max-height: 900px;
+    margin: auto;
+    display: grid;
+    @include for-tablet-portrait-up {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+    @include for-phone-only {
+      grid-template-rows: repeat(4, 1fr);
+    }
+    @include for-tablet-portrait-down {
+      width: 100%;
+    }
  }
 
 .testImageWrapper1 {
