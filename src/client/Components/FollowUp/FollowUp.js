@@ -11,9 +11,6 @@ const FollowUp = ({ toggleModal }) => (
     <div className={styles.followUpText}>
       You've got a great idea. We want to help you build it.
     </div>
-    <div className={styles.buttonsWrapper}>
-      <button onClick={toggleModal} type='button'>Holler at us</button>
-    </div>
   </div>
 );
 

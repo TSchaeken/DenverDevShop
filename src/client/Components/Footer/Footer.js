@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import ContactForm from '../ContactForm';
 import styles from './Footer.scss';
@@ -40,18 +40,28 @@ const Branding = () => (
   </div>
 );
 
-const Footer = () => (
-  <div className={styles.root}>
-    <div className={styles.branding}>
-      Here's some footer branding content
-      <Branding />
-    </div>
-    <div className={styles.contactFormWrapper}>
-      <h2>Your email will be shared with a golden retriever.</h2>
-      <p>And then forgotten. She adheres to GDPR.</p>
-      <ContactForm />
-    </div>
-  </div>
-);
+class Footer extends Component {
+  constructor(props) {
+    super(props)
+    this.ref = React.createRef()
+  }
+  componentDidMount() {
+    this.props.setRef(this.ref)
+  }
+  render() {
+    return (
+      <div className={styles.root} ref={this.ref}>
+        <div className={styles.branding}>
+          Here's some footer branding content
+        </div>
+        <div className={styles.contactFormWrapper}>
+          <h2>Contact Us Today</h2>
+          <p>You'll hear from us by tomorrow</p>
+          <ContactForm />
+        </div>
+      </div>
+    )
+  }
+}
 
 export default Footer;
