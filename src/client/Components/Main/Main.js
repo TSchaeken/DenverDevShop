@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import TagLine from '../TagLine';
 import CaseStudies from '../CaseStudies';
@@ -25,7 +25,7 @@ class HomePage extends Component {
   );
 
   render() {
-    const { setRef, scrollToRef } = this.props
+    const { setRef, scrollToRef } = this.props;
     return (
       <div className={styles.root}>
         {this.head()}
@@ -41,8 +41,8 @@ class HomePage extends Component {
 }
 
 HomePage.propTypes = {
-  // classes: PropTypes.object.isRequired,
-  // toggleModal: PropTypes.func.isRequired,
+  setRef: PropTypes.func.isRequired,
+  scrollToRef: PropTypes.func.isRequired,
 };
 
 export default HomePage;
