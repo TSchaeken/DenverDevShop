@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './TagLine.scss';
 
-const TagLine = ({ toggleModal }) => (
+const TagLine = ({ scrollToRef }) => (
   <div className={styles.root}>
     <div className={styles.headline}>
       Startup team for hire
@@ -16,7 +16,7 @@ const TagLine = ({ toggleModal }) => (
       <p className={styles.attribution}>- Rob</p>
     </div>
     <div className={styles.buttonsWrapper}>
-      <button onClick={toggleModal} type='button'>Meet the team!</button>
+      <button onClick={scrollToRef} type='button'>Meet the team!</button>
     </div>
   </div>
 );

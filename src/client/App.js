@@ -41,7 +41,7 @@ class App extends Component {
           exact
           path='/'
           render={(props) => (
-              <Main setRef={this.setRef} {...props} />
+              <Main setRef={this.setRef} scrollToRef={this.scrollToRef} {...props} />
           )}
         />
       </div>
