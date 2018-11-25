@@ -115,9 +115,9 @@
     cursor: pointer;
     font-size: 1rem;
     font-family: $header;
-    font-weight: 600;
-    color: $black;
-    transition: color 750ms ease-out; 
+    font-weight: 700;
+    color: $dark-blue;
+    transition: color 750ms ease-out;
     outline: none;
   }
   @include for-phone-only {
