@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Main from './Components/Main';
 import NavBar from './Components/NavBar';
-import Modal from './Components/Modal';
+// import Modal from './Components/Modal';
 import styles from './styles/main.scss';
 
 class App extends Component {
@@ -12,7 +12,6 @@ class App extends Component {
 
   state = {
     scrollY: 0,
-    contactModalOpen: false,
   };
 
   setScrollY = () => {
@@ -20,20 +19,16 @@ class App extends Component {
       scrollY: window.scrollY,
     }));
   }
-  /* eslint-disable-next-line */
-  toggleContactModal = (contactModalOpen = !this.state.contactModalOpen) => {
-    this.setState({ contactModalOpen });
-  }
 
   render() {
     const { contactModalOpen, scrollY } = this.state;
     return (
       <div className={contactModalOpen ? styles.modalOpen : null}>
-        <NavBar toggleContactModal={() => this.toggleContactModal(!contactModalOpen)} scrolled={scrollY >= 64} />
+        <NavBar scrolled={scrollY >= 64} />
         <Route
           exact
           path='/'
-          render={props => <Main toggleModal={() => this.toggleContactModal(!contactModalOpen)} />}
+          component={Main}
         />
       </div>
     );

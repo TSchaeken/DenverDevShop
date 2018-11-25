@@ -3,10 +3,21 @@ import React, { Component } from 'react';
 
 import styles from './ContactForm.scss';
 
-class ContactForm extends Component { 
+class ContactForm extends Component {
 
-  handleChange = () => {
-    console.log('do something');
+  state = {
+    address: '',
+    focus: '',
+    name: '',
+    message: '',
+    showForm: true,
+  };
+
+  handleChange = (name, value) => {
+    this.setState(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
   }
 
   sendEmail = () => {

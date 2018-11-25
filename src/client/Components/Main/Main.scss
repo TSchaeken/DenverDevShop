@@ -6,10 +6,13 @@
   display: grid;
   grid-template-columns: 48px 1fr 48px;
   grid-template-rows: repeat(1fr, 2);
+  @include for-tablet-portrait-down {
+    grid-template-columns: 12px 1fr 12px;
+  }
   .contentWrapper {
     grid-column-start: 2;
-    @include for-phone-only {
-      grid-column: 1 / 4;
-    }
+    // @include for-phone-only {
+    //   grid-column: 1 / 4;
+    // }
   }
 }
