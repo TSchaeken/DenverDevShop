@@ -20,7 +20,7 @@ class HomePage extends Component {
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <link rel='canonical' href='http://www.denverdevshop.com' />
       <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' />
-      <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' />
+      <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:600' rel='stylesheet' />
     </Helmet>
   );
 

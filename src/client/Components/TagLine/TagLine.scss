@@ -17,11 +17,18 @@
   color: $dark-blue;
 }
 
-.followUp, .followUp p {
+.followUp {
+  font-family: $body;
+  font-size: 2rem;
+  font-weight: 600;
+  color: $dark-blue;
+}
+
+.quote p {
   font-family: $body;
   font-size: 1.5rem;
   font-weight: normal;
-  color: $dark-grey;
+  color: $light-grey;
 }
 
 .buttonsWrapper {
