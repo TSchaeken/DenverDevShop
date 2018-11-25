@@ -25,12 +25,13 @@ class HomePage extends Component {
   );
 
   render() {
-    const { setRef, scrollToRef } = this.props;
+    const { setRef, scrollToRef, scrollY } = this.props;
+    console.log('scrollY here: ', scrollY);
     return (
       <div className={styles.root}>
         {this.head()}
         <div className={styles.contentWrapper}>
-          <TagLine scrollToRef={scrollToRef} />
+          <TagLine scrollY={scrollY} scrollToRef={scrollToRef} />
           <CaseStudies />
           <FollowUp />
         </div>

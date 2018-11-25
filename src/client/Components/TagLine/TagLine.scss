@@ -1,11 +1,32 @@
 @import '../../styles/variables.scss';
 
 .root {
-  height: 530px;
+  height: 650px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url('../../assets/hero.jpg');
+  background-size: cover;
+  background-position-y: center;
+  position: relative;
+  @include for-tablet-landscape-up {
+    width: 90vw;
+    margin: auto;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.9);
+  }
+  > div {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .headline {
