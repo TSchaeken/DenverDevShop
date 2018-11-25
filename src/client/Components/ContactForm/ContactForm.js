@@ -40,7 +40,7 @@ class ContactForm extends Component {
   render() {
     return (
       <div className={styles.contactForm}>
-        <div className={styles.inlineInputWrapper}>
+        {/* <div className={styles.inlineInputWrapper}>
           <input
             placeholder='Your Name'
             onChange={e => this.handleChange('name', e.target.value)}
@@ -49,10 +49,14 @@ class ContactForm extends Component {
             placeholder='Your Email'
             onChange={e => this.handleChange('address', e.target.value)}
             type='text' />
-        </div>
+        </div> */}
         <input
-          placeholder='Your Project Focus'
-          onChange={e => this.handleChange('focus', e.target.value)}
+          placeholder='Your Name'
+          onChange={e => this.handleChange('name', e.target.value)}
+          type='text' />
+        <input
+          placeholder='Your Email'
+          onChange={e => this.handleChange('address', e.target.value)}
           type='text' />
         <textarea
           onChange={e => this.handleChange('message', e.target.value)}
