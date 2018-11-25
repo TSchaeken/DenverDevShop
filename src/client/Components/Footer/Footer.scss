@@ -63,12 +63,14 @@
 // }
 
 .footerText, .footerLink {
-  color: #ccc;
+  font-family: $body;
   font-size: 1.25rem;
+  color: #ccc;
   z-index: 200;
 }
 
 .footerLink {
+  font-color: $body;
   color: white;
   text-decoration: underline;
   cursor: pointer;
@@ -82,11 +84,13 @@
   right: 0;
   z-index: 200;
   .copyright {
+    font-family: $body;
     color: #ccc;
     float: left;
     margin-left: 30px;
   }
   .phoneNumber {
+    font-family: $body;
     color: #ccc;
     float: right;
     margin-right: 30px;
