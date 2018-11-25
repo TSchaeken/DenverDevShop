@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Main from './Components/Main';
 import NavBar from './Components/NavBar';
-// import Modal from './Components/Modal';
 import styles from './styles/main.scss';
 
 class App extends Component {
@@ -22,14 +21,15 @@ class App extends Component {
   }
 
   setRef = ref => {
-    this.setState({ ref })
+    this.setState({ ref });
   }
 
   scrollToRef = () => {
+    const { ref } = this.state;
     window.scrollTo({
-      top: this.state.ref.current.offsetTop,
-      behavior: "smooth"
-    })
+      top: ref.current.offsetTop,
+      behavior: 'smooth',
+    });
   }
 
   render() {
@@ -41,7 +41,7 @@ class App extends Component {
           exact
           path='/'
           render={(props) => (
-              <Main setRef={this.setRef} scrollToRef={this.scrollToRef} {...props} />
+            <Main setRef={this.setRef} scrollToRef={this.scrollToRef} {...props} />
           )}
         />
       </div>

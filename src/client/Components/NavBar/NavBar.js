@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { HashLink as Link } from 'react-router-hash-link';
 import styles from './NavBar.scss';
 
 const NavBar = ({ scrolled, scrollToRef }) => (
@@ -23,7 +22,7 @@ const NavBar = ({ scrolled, scrollToRef }) => (
 
 NavBar.propTypes = {
   scrolled: PropTypes.bool.isRequired,
-  // toggleContactModal: PropTypes.func.isRequired,
+  scrollToRef: PropTypes.func.isRequired,
 };
 
 export default NavBar;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import ContactForm from '../ContactForm';
 import styles from './Footer.scss';
@@ -45,5 +46,9 @@ class Footer extends Component {
     );
   }
 }
+
+Footer.propTypes = {
+  setRef: PropTypes.func.isRequired,
+};
 
 export default Footer;

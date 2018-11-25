@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .contactForm {
-  flex-grow: 8;
+  // flex-grow: 8;
   display: flex;
   flex-direction: column;
   input, textarea {
@@ -45,4 +45,15 @@
         background-color: darken(green, 5%);
       }
     }
+}
+
+.successText {
+  line-height: 1.5rem;
+  margin-top: 24px;
+}
+
+.toggleFormLink {
+  text-decoration: underline;
+  cursor: pointer;
+  user-select: none;
 }

@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import styles from './ContactForm.scss';
+
+const SuccessText = ({ toggleForm }) => (
+  <div className={styles.successText}>
+    <h4>
+      Nice, we've got your info now!
+    </h4>
+    <h4>
+      Noah's gonna put some content here eventually I'm sure!
+    </h4>
+    {/* eslint-disable-next-line */}
+    <h4 onClick={toggleForm} className={styles.toggleFormLink}>
+      Show me the form again
+    </h4>
+  </div>
+);
 
 class ContactForm extends Component {
   state = {
@@ -37,19 +52,17 @@ class ContactForm extends Component {
     });
   }
 
+  toggleForm = () => {
+    this.setState(prevState => ({
+      showForm: !prevState.showForm,
+    }));
+  }
+
+
   render() {
-    return (
+    const { showForm } = this.state;
+    return showForm ? (
       <div className={styles.contactForm}>
-        {/* <div className={styles.inlineInputWrapper}>
-          <input
-            placeholder='Your Name'
-            onChange={e => this.handleChange('name', e.target.value)}
-            type='text' />
-          <input
-            placeholder='Your Email'
-            onChange={e => this.handleChange('address', e.target.value)}
-            type='text' />
-        </div> */}
         <input
           placeholder='Your Name'
           onChange={e => this.handleChange('name', e.target.value)}
@@ -65,7 +78,7 @@ class ContactForm extends Component {
           Submit
         </button>
       </div>
-    );
+    ) : <SuccessText toggleForm={this.toggleForm} />;
   }
 
   /* eslint-disable react/sort-comp */
@@ -74,5 +87,9 @@ class ContactForm extends Component {
   //   sendEmail: PropTypes.func.isRequired,
   // };
 }
+
+SuccessText.propTypes = {
+  toggleForm: PropTypes.func.isRequired,
+};
 
 export default ContactForm;
