@@ -1,7 +1,6 @@
 @import '../../styles/variables';
 
 .root {
-  // height: 530px;
   max-width: 800px;
   margin: auto;
   display: flex;
@@ -14,7 +13,7 @@
 .headline {
   font-size: 2rem;
   font-weight: bold;
-  line-height: 2rem;
+  line-height: 2.5rem;
   margin: $spacing-lg;
 }
 

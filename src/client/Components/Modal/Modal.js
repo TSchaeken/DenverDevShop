@@ -120,29 +120,6 @@ class Modal extends Component {
                     ) :
                     <SuccessText toggleForm={this.toggleForm} />
                 }
-                {/* eslint-enable */}
-                {/* <div className={styles.modalForm}>
-                  <div className={styles.inlineInputWrapper}>
-                    <input
-                      placeholder='Your Name'
-                      onChange={e => this.handleChange('name', e.target.value)}
-                      type='text' />
-                    <input
-                      placeholder='Your Email'
-                      onChange={e => this.handleChange('address', e.target.value)}
-                      type='text' />
-                  </div>
-                  <input
-                    placeholder='Your Project Focus'
-                    onChange={e => this.handleChange('focus', e.target.value)}
-                    type='text' />
-                  <textarea
-                    onChange={e => this.handleChange('message', e.target.value)}
-                    placeholder='Your Message' />
-                  <button onClick={this.sendEmail} className={styles.submitButton} type='submit'>
-                    Submit
-                  </button>
-                </div> */}
                 <div className={styles.modalContactInfo}>
                   <br />
                   <img src={coCompany} alt='coCompany' />

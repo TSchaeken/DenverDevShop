@@ -1,4 +1,4 @@
-@import '../../styles/main.scss';
+@import '../../styles/variables';
 
 .root {
   position: relative;
@@ -8,5 +8,8 @@
   grid-template-rows: repeat(1fr, 2);
   .contentWrapper {
     grid-column-start: 2;
+    @include for-phone-only {
+      grid-column: 1 / 4;
+    }
   }
 }

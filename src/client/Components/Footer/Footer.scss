@@ -1,16 +1,49 @@
 @import '../../styles/variables';
 
 .root {
-  height: 400px;
+  min-height: 400px;
   background-image: url('../../assets/8438474948_b8d590afa1_h.jpg');
   background-position: bottom;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
   grid-row-start: 2;
   grid-column: 1 / 4;
-  &::after {
+  display: grid;
+  grid-template-columns: 48px 1fr 1fr 48px;
+  grid-template-rows: 48px 1fr 0.5fr;
+  color: $white;
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  p {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color: $light-grey;
+  }
+  .branding {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .contactFormWrapper {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  @include for-phone-only {
+    grid-template-columns: 12px 1fr 12px;
+    grid-template-rows: 48px 1fr 1fr 0.5fr;
+    .contactFormWrapper {
+      grid-column: 2;
+      grid-row: 3;
+    }
+    .branding {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+  &::before {
     content: " ";
     position: absolute;
     top: 0;
@@ -20,7 +53,14 @@
     opacity: 0.85;
     background-color: #111;
   }
+  > div {
+    z-index: 1;
+  }
 }
+
+// .branding {
+//   color: white;
+// }
 
 .footerText, .footerLink {
   color: #ccc;
