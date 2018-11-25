@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import styles from './ContactForm.scss';
 
 class ContactForm extends Component {
-
   state = {
     address: '',
     focus: '',
@@ -21,7 +20,21 @@ class ContactForm extends Component {
   }
 
   sendEmail = () => {
-    console.log('do something');
+    const response = fetch('./sendEmail', {
+      headers: new Headers({
+        'Content-Type': 'application/json',
+      }),
+      method: 'POST',
+      body: JSON.stringify(this.state),
+    });
+    Promise.resolve(response).then(result => {
+      if (result.ok) {
+        console.log('email successfully sent!');
+        this.setState({ showForm: false });
+      } else {
+        console.log('email failed to send');
+      }
+    });
   }
 
   render() {
