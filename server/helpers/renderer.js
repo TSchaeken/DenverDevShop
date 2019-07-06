@@ -50,6 +50,13 @@ export default (req) => {
         ${helmet.meta.toString()}
         ${helmet.link.toString()}
         <link rel="stylesheet" href="./styles.css">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6277769631415734",
+            enable_page_level_ads: true
+          });
+        </script>
       </head>
       <body ${helmet.bodyAttributes.toString()}>
         ${bodyTagManager}
