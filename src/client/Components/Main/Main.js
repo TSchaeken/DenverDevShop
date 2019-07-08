@@ -21,13 +21,6 @@ class HomePage extends Component {
       <link rel='canonical' href='http://www.denverdevshop.com' />
       <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' />
       <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:600' rel='stylesheet' />
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-8031739923151509",
-          enable_page_level_ads: true
-        });
-      </script>
     </Helmet>
   );
 
